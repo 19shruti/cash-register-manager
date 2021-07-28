@@ -4,22 +4,93 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
+  
 </head>
 <body>
-    <div>
-    <h1 > cash register counter </h1>
-    <textarea id="text-input" placeholder="enter the amount"></textarea>  
-    <button id="btn-enter">enter </button>
-    <div id="output"></div>
-    <br>
-    <textarea id="cash-received" placeholder="enter the cash customer gave"></textarea>
-    <button id="btn-cash">enter</button>
-    <div id="outputcash"></div>
-    <br>
-    <div id="sub"></div>
-    <button id="res">return</button>
-</div>
-<script src="index.js" type="text/javascript"></script>
+    <section id="container">
+        <h1 style="color: aliceblue;">Cash Register Manager</h1>
+        <p style="text-align: center; color: aliceblue;">
+          Enter the bill amount and cash given by the customer and know minimum
+          number of notes to return.
+        </p>
+        <!-- cost input [ billing amount ]  -->
+       
+        <div id="nextContainer" style="text-align: center; color: aliceblue;">
+          <label class="label">  Bill Amount:</label>
+          <input type="number" id="cost-Input" />
+          
+        
+          <button id="cashBt1n" onclick="toggleVisibility('output')">Next</button>
+          </div>
+          <br>
+         
+        <!-- paid input  [customer paid to get the change ] -->
+        
+         
+          
+          <div id= "output" class="out" style="text-align: center; color: aliceblue;"> 
+            <div id="po">
+           
+            <div id="checkContainer" ></div>
+          <label  id="text1">  Cash Given:</label>
+          
+          <input type="number" id="paid-Input"  />
+          <button id="checkBtn">Check</button>
+          <br>
+        </div> 
+          <br>
+          <br>
+           <label> THE CHANGE TO RETURN :</label>
+           <br>
+           <br>
+        <div id="errorMsg"></div>
+        <div id="outputContainer">
+            <table>
+              <tr>
+                <th>No. of currencies</th>
+                <td class="noOfNotes" id="twothousand_count"></td>
+                <td class="noOfNotes" id="fivehund_count"></td>
+                <td class="noOfNotes" id="hund_count"></td>
+                <td class="noOfNotes" id="twenty_count"></td>
+                <td class="noOfNotes" id="ten_count"></td>
+                <td class="noOfNotes" id=five_count></td>
+                <td class="noOfNotes" id=one_count></td>
+              </tr>
+              <tr>
+                <th>currencies</th>
+                <td>2000</td>
+                <td>500</td>
+                <td>100</td>
+                <td>20</td>
+                <td>10</td>
+                <td>5</td>
+                <td>1</td>
+              </tr>
+            </table>
+          </div>
+        </div></div>
+      </section>
+
+
+      <footer class="footer">
+       
+        <div class="list-group">
+            <a style="padding-left:25px;" class="list-group-item" href="https://www.linkedin.com/in/shruti-raj-75650b190/"><i class="fa fa-linkedin fa-1x" aria-hidden="true"></i></i></a>
+            <a style="padding-left:25px;" class="list-group-item" href="https://github.com/19shruti?tab=repositories"><i class="fa fa-github fa-1x" aria-hidden="true"></i></i> </a>
+        
+            <a style="padding-left:25px;" class="list-group-item" href="https://www.youtube.com/channel/UC0KfbZfIf70RV9VCaJSB76Q"><i class="fa fa-youtube fa-1x" aria-hidden="true"></i></a>
+         <a style="padding-left:25px;" class="list-group-item" href="https://mobile.twitter.com/ShRutiRaJ90"><i class="fa fa-twitter fa-1x" aria-hidden="true"></i> </a> 
+          </div>
+          <div class="legacyText">
+            <b>© 2021 | ShrutiRaJ | </b>
+            <!-- <a id="privacyPolicyText" href="#alertBox">
+                Privacy Policy
+            </a> -->
+            </div>
+        </footer>
+<script src="index.js"></script>
 </body>
 </html>

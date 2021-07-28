@@ -1,0 +1,49 @@
+ <!-- paid input  [customer paid to get the change ]-->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="style.css" />
+     <title>Document</title>
+ </head>
+ <body>
+     <div id="paid"></div>
+     <div id="checkContainer">
+    <label class="label">  Cash Given:</label>
+    <input type="number" id="paid-Input" />
+  </div> 
+    <button id="checkBtn">Check</button>
+  <div id="errorMsg"></div>
+  <div id="outputContainer">
+    <label class="label">Return Change:</label>
+    
+    <div id="output">
+      <table>
+        <tr>
+          <th>No. of currencies</th>
+          <td class="noOfNotes" id="twothousand_count"></td>
+          <td class="noOfNotes" id="fivehund_count"></td>
+          <td class="noOfNotes" id="hund_count"></td>
+          <td class="noOfNotes" id="twenty_count"></td>
+          <td class="noOfNotes" id="ten_count"></td>
+          <td class="noOfNotes" id=five_count></td>
+          <td class="noOfNotes" id=one_count></td>
+        </tr>
+        <tr>
+          <th>currencies</th>
+          <td>2000</td>
+          <td>500</td>
+          <td>100</td>
+          <td>20</td>
+          <td>10</td>
+          <td>5</td>
+          <td>1</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+ </body>
+ </html>
+ 
