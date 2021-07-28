@@ -3,6 +3,7 @@
 let paid_Input = document.querySelector("#paid-Input");
 let cost_Input = document.querySelector("#cost-Input");
 let checkBtn = document.querySelector("#checkBtn");
+let cashBt1n=document.querySelector("#cashBt1n");
 
 
 let twothousand_count = document.querySelector("#twothousand_count");
@@ -12,15 +13,46 @@ let twenty_count = document.querySelector("#twenty_count");
 let ten_count = document.querySelector("#ten_count");
 let five_count = document.querySelector("#five_count");
 let one_count = document.querySelector("#one_count");
+let output=document.querySelector("#output");
+function nextBtnHandler(){
+        if(cost_Input.value>0){
+            cashBt1n.style.display = "none";
+            output.style.display = "block";
+        }
+        else{
+            alert("Enter Valid Bill Amount!");
+            output.style.display = "none";
+        }    
+    }
+    cashBt1n.addEventListener("click", nextBtnHandler);4
 
-    
-checkBtn.addEventListener("click", function () {
+    function resetTable(){
+        twothousand_count.innerHTML ==="";
+        fivehund_count.innerHTML ==="";
+        hund_count.innerHTML ==="";
+        twenty_count.innerHTML ==="";
+        ten_count.innerHTML ==="";
+        five_count.innerHTML ==="";
+        one_count.innerHTML==="";
+    }  
 
-    let paid = Number(paid_Input.value);
-    let cost = Number(cost_Input.value);
+// checkBtn.addEventListener("click", function () {
+
+    function clickBtn(){
+  
+    let cost = Number(cost_Input.value); 
+   
+   let paid = Number(paid_Input.value);
     let total_change = (paid - cost);
-    alert("total change is ::  " + total_change);
-    let twothousand = Math.floor(total_change / 2000);
+
+    if(total_change === 0){
+        output.style.display = "none";
+        alert("Nothing to return!");
+    }
+    else if(total_change > 0){
+        // balanceDisplay.innerText = "₹" + balance;
+        
+        let twothousand = Math.floor(total_change / 2000);
     let left_over = (total_change % 2000);
     let fivehund = Math.floor(left_over / 500);
     left_over = (left_over % 500);
@@ -41,7 +73,22 @@ checkBtn.addEventListener("click", function () {
     ten_count.innerHTML = ten;
     five_count.innerHTML = five;
     one_count.innerHTML = one;
-})
+    
+        outputSection.style.display = "block";
+    }
+    else  {
+        // output.style.display = "none";
+        alert("Insufficient Cash! Add More Cash.");    
+        
+    }   
+    
+
+   
+    // resetTable();
+   
+    
+}
+checkBtn.addEventListener("click",clickBtn);
 // function setVisibility(checkBtn,output,text1,paid_Input,checkBtn)  {
 //     if(document.getElementById('cashBt1n').value=='Show Layer'){
 //         document.getElementById('cashBt1n').value = 'Hide Layer';
@@ -62,3 +109,9 @@ function toggleVisibility(cashBt1n) {
     else
        e.style.display = 'block';
 }
+// function unhide(output) {
+//     var item = document.getElementById(output);
+//     if (item) {
+//     item.classNameout=(item.out=='hidden')?'unhidden':'hidden';
+//     }}
+// checkBtn.addEventListener("click",clickBtn)
