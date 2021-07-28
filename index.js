@@ -51,6 +51,8 @@ function nextBtnHandler(){
     }
     else if(total_change > 0){
         // balanceDisplay.innerText = "₹" + balance;
+        alert("the change to return :: "+ total_change);
+        document.getElementById("chan").innerHTML="the change to return ::"+ total_change;
         
         let twothousand = Math.floor(total_change / 2000);
     let left_over = (total_change % 2000);
